@@ -12,6 +12,11 @@ use rocket::serde::json::{Value, json};
 //     json!("hello world")
 // }
 
+#[catch(404)]
+fn not_found() -> Value {
+    json!("not found")
+}
+
 #[get("/rust_devs")]  // Original route
 fn get_rust_devs() -> Value {
     json!([{"id": 1, "name": "sojol saha"}, {"id": 2, "name": "sojol saha again"}])
@@ -48,6 +53,7 @@ async fn main() {
             update_rust_devs,
             delete_rust_devs
         ])
+        .register("/", catchers![not_found])
         .launch()
         .await;
 }
