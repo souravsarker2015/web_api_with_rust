@@ -6,4 +6,5 @@ file = "src/schema.rs"
 custom_type_derives = ["diesel::query_builder::QueryId", "Clone"]
 
 [migrations_directory]
-dir = "/home/sourov/snap/snap_store_/a/web_api_with_rust/rocket-app/migrations"
+#dir = "/home/sourov/snap/snap_store_/a/web_api_with_rust/rocket-app/migrations"
+dir = "./migrations"

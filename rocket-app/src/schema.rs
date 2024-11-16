@@ -5,7 +5,6 @@ diesel::table! {
         id -> Nullable<Integer>,
         name -> Text,
         email -> Text,
-        created_at -> Timestamp,
     }
 }
 
